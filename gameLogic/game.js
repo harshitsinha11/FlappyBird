@@ -1,24 +1,27 @@
 const canvas = document.getElementById("canvas")
 const brush = canvas.getContext('2d');
-const W = canvas.width = canvas.clientWidth || 480; 
-const H = canvas.height = canvas.clientHeight || 640;
+
+//Making it crisp
+const dpr = window.devicePixelRatio || 1;
+const W = canvas.width = Math.floor((canvas.clientWidth || 480) * dpr); 
+const H = canvas.height = Math.floor((canvas.clientHeight || 640 )* dpr);
 
 let pipes,score,frame;
 
 const PIPE_GAP = 160;
 const PIPE_W = 80;
-const PIPE_DIST = 325;
+const PIPE_DIST = 350;
 const PIPE_SPEED = 2.5;
 
 const GROUND_H = 80;
 
-(function(){
+(function reset(){
     pipes = [];
     frame = 0;
     score = 0;
     spawnInitialPipes();
     loop();
-}) ();
+})();
 
 function spawnInitialPipes(){
     pipes = [];
