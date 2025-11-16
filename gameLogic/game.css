@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: #70c5ce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvas{
+    height: 75%;
+    width: 85%;
+    background-color:transparent;
+    border-radius:8px;
+    box-shadow:0 6px 20px rgba(10,10,10,0.15)
+}
